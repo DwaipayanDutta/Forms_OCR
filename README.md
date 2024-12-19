@@ -1,4 +1,4 @@
-# 🆔 Document Number Extractor
+# 🆔 Document Extractor
 
 A Python application that utilizes [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) to extract Driving License numbers, PAN numbers, and EPIC numbers from images and PDF documents. This tool is designed for easy identification and extraction of important document numbers.
 
@@ -34,3 +34,12 @@ When you run the script with a valid image or PDF containing identification docu
 Driving License Numbers: ['DL123456789012']\
 PAN Numbers: ['ABCDE1234F']\
 EPIC Numbers: ['ABC1234567']
+
+## 🛠️ Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🤝 Acknowledgments
+- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) for providing powerful OCR capabilities.
+- [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/) for handling PDF files.
+
