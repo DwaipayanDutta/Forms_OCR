@@ -38,7 +38,7 @@ EPIC Numbers: ['ABC1234567']
 ## 🛠️ Contributing
 Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 ## 📜 License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/DwaipayanDutta/Forms_OCR/blob/main/LICENSE.md) file for details.
 ## 🤝 Acknowledgments
 - [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) for providing powerful OCR capabilities.
 - [PyMuPDF](https://pymupdf.readthedocs.io/en/latest/) for handling PDF files.
