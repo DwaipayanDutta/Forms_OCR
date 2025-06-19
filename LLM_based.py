@@ -58,3 +58,11 @@ def extract_pan_details(base64_image):
         "DOB": pan_details[3].strip()
     }
 
+# Main execution
+if __name__ == "__main__":
+    image_path = 'D:/Important/Letters/PAN.png'  # Replace with your image path
+    base64_image = document_to_base64(image_path)
+   
+    pan_dict = extract_pan_details(base64_image)
+   
+    print(pan_dict)
