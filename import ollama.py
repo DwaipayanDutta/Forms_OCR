@@ -3,6 +3,10 @@ from PIL import Image
 import base64
 import io
 from pdf2image import convert_from_path
+import os
+from tqdm.notebook import tqdm
+import pandas as pd
+
 
 def document_to_base64(document_path):
     if document_path.lower().endswith('.pdf'):
@@ -57,4 +61,35 @@ def extract_pan_details(base64_image):
         "PAN NO": pan_details[2].strip(),
         "DOB": pan_details[3].strip()
     }
+
+# # Main execution
+# if __name__ == "__main__":
+#     image_path = 'D:/Important/Letters/PAN.png'  # Replace with your image path
+#     base64_image = document_to_base64(image_path)
+    
+#     pan_dict = extract_pan_details(base64_image)
+    
+#     print(pan_dict)
+
+
+def process_pan_documents(pan_path, output_file='pan_extracts.xlsx'):
+    pan_list = [i for i in os.listdir(pan_path) if not i.startswith('.')]
+    results = []
+    
+    for file in tqdm(pan_list, desc='Processing PAN files'):
+        file_path = os.path.join(pan_path, file)
+        base64_image = document_to_base64(file_path)
+        pan_dict = extract_pan_details(base64_image)
+        pan_dict['file_name'] = file 
+        results.append(pan_dict)
+    
+    # Convert list of dictionaries to a DataFrame and save to Excel
+    df = pd.DataFrame(results)
+    df.to_excel(output_file, index=False)
+    return df
+
+if __name__ == "__main__":
+    pan_path = 'D:/Details/Pan/'  
+    df = process_pan_documents(pan_path)
+    print(df.head())
 
