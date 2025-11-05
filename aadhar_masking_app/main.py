@@ -4,6 +4,7 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 from masking import AadharMask
 
+
 app = FastAPI(title="Aadhaar Masking API", version="1.0")
 
 masker = AadharMask()
